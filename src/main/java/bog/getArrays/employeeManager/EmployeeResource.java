@@ -45,8 +45,10 @@ public class EmployeeResource {
 
     @DeleteMapping("/update/{id}") //Update Employee de aceea e put
     public ResponseEntity<?> deleteEmployee(@PathVariable("id") Long id){ // @PathVariable deoarece este o variabila deja transmisa in pathul mappingului -> "/update/{id}"
-        //<?> arata ca nu se returneaza nimic 
+        //<?> arata ca nu se returneaza nimic
         employeeService.deleteEmployee(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+    //Se foloseste postman pentru ca browserul poate sa trimita numai GetRequest
+    //Postman poate sa trimita si PutRequest PostRequest DeteleRequest ...
 }
